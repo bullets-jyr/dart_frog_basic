@@ -14,3 +14,41 @@ Response onRequest(RequestContext context) {
       ),
   };
 }
+
+Response _handleGet(RequestContext context) {
+  return Response(
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: '{"Request method": "${context.request.method}"}',
+  );
+  // return Response(
+  //   body: 'Request method: ${context.request.method.value}',
+  // );
+  // return Response(
+  //   body: 'Request method: ${context.request.method}',
+  // );
+}
+
+Response _handlePost(RequestContext context) {
+  return Response(
+    // static const int created = 201;
+    statusCode: HttpStatus.created,
+    body: 'Request method: ${context.request.method}',
+  );
+}
+
+// 200, 204 (no-content)
+Response _handlePut(RequestContext context) {
+  return Response(
+    body: 'Request method: ${context.request.method}',
+  );
+}
+
+// 200, 204 (no-content)
+Response _handleDelete(RequestContext context) {
+  return Response(
+    statusCode: HttpStatus.noContent,
+    body: 'Request method: ${context.request.method}',
+  );
+}
