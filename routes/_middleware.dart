@@ -1,7 +1,7 @@
 import 'package:dart_frog/dart_frog.dart';
 
 Handler middleware(Handler handler) {
-  return handler.use(_rootMiddlewareOne);
+  return handler.use(_rootMiddlewareOne).use(requestLogger());
 }
 
 Handler _rootMiddlewareOne(Handler handler) {
