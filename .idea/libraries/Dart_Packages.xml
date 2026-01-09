@@ -361,6 +361,7 @@
         <entry key="http">
           <value>
             <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/http-1.6.0/lib" />
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/http-1.5.0/lib" />
             </list>
           </value>
@@ -886,6 +887,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/hotreloader-4.3.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/html-0.15.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/http-1.5.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/http-1.6.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/http_methods-1.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/http_multi_server-3.2.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/http_parser-4.1.2/lib" />
