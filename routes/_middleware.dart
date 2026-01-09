@@ -5,7 +5,9 @@ Handler middleware(Handler handler) {
       // .use(requestLogger())
       .use(_rootMiddlewareOne)
       .use(_rootMiddlewareTwo)
-      .use(_rootMiddlewareThree);
+      .use(_rootMiddlewareThree)
+      .use(tokenProvider());
+      // .use(anotherStringProvider())
 }
 
 Handler _rootMiddlewareOne(Handler handler) {
@@ -43,3 +45,11 @@ Handler _rootMiddlewareThree(Handler handler) {
     return response;
   };
 }
+
+Middleware tokenProvider() {
+  return provider<String>((context) => '1234xyz');
+}
+
+// Middleware anotherStringProvider() {
+//   return provider<String>((context) => 'Another String');
+// }
