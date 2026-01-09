@@ -1,7 +1,11 @@
 import 'package:dart_frog/dart_frog.dart';
 
 Handler middleware(Handler handler) {
-  return handler.use(_rootMiddlewareOne).use(requestLogger());
+  return handler
+      // .use(requestLogger())
+      .use(_rootMiddlewareOne)
+      .use(_rootMiddlewareTwo)
+      .use(_rootMiddlewareThree);
 }
 
 Handler _rootMiddlewareOne(Handler handler) {
@@ -11,6 +15,30 @@ Handler _rootMiddlewareOne(Handler handler) {
     final response = await handler(context);
 
     print('[root] after request');
+
+    return response;
+  };
+}
+
+Handler _rootMiddlewareTwo(Handler handler) {
+  return (RequestContext context) async {
+    print('[root 2] before request');
+
+    final response = await handler(context);
+
+    print('[root 2] after request');
+
+    return response;
+  };
+}
+
+Handler _rootMiddlewareThree(Handler handler) {
+  return (RequestContext context) async {
+    print('[root 3] before request');
+
+    final response = await handler(context);
+
+    print('[root 3] after request');
 
     return response;
   };
