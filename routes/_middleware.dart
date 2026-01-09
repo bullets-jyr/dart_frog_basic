@@ -1,6 +1,10 @@
 import 'package:dart_frog/dart_frog.dart';
 
 Handler middleware(Handler handler) {
+  return handler.use(_rootMiddlewareOne);
+}
+
+Handler _rootMiddlewareOne(Handler handler) {
   return (RequestContext context) async {
     print('[root] before request');
 
